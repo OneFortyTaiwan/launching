@@ -1,8 +1,11 @@
 'use strict';
 
-angular.module('oneforty')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
+angular
+  .module('oneforty')
+  .controller('MainCtrl', [function () {
+    var self = this;
+
+    self.awesomeThings = [
       {
         'title': 'AngularJS',
         'url': 'https://angularjs.org/',
@@ -58,7 +61,7 @@ angular.module('oneforty')
         'logo': 'node-sass.png'
       }
     ];
-    angular.forEach($scope.awesomeThings, function(awesomeThing) {
+    angular.forEach(self.awesomeThings, function(awesomeThing) {
       awesomeThing.rank = Math.random();
     });
-  });
+  }]);

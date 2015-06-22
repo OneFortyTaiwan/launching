@@ -1,3 +1,38 @@
+/**
+ * [utils] Universal helpers and sass tools
+ */
+@import '../sass/utils/helper';
+
+/**
+ * [base] the boilerplate and the collection of global variables for the project
+ */
+@import '../sass/base/settings';
+@import '../sass/base/base';
+
+/**
+ * [components] the independent UI components for the project
+ */
+@import '../sass/components/navbar';
+@import '../sass/components/footnote';
+@import '../sass/components/carousel';
+@import '../sass/components/stamp';
+@import '../sass/components/counter';
+@import '../sass/components/conversation';
+@import '../sass/components/map';
+@import '../sass/components/list';
+@import '../sass/components/form';
+
+/**
+ * [layouts] the section specific style for the project
+ */
+@import '../sass/layouts/home';
+@import '../sass/layouts/background';
+@import '../sass/layouts/problems';
+@import '../sass/layouts/vision';
+@import '../sass/layouts/solutions';
+@import '../sass/layouts/joinus';
+
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
