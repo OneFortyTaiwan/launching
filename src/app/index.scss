@@ -21,16 +21,20 @@
 @import '../sass/components/map';
 @import '../sass/components/list';
 @import '../sass/components/form';
+@import '../sass/components/photoWall';
 
 /**
  * [layouts] the section specific style for the project
  */
 @import '../sass/layouts/home';
 @import '../sass/layouts/background';
-@import '../sass/layouts/problems';
 @import '../sass/layouts/vision';
+@import '../sass/layouts/problems';
 @import '../sass/layouts/solutions';
+@import '../sass/layouts/gallery';
 @import '../sass/layouts/joinus';
+@import '../sass/layouts/sponsors';
+@import '../sass/layouts/description';
 
 
 .browsehappy {
