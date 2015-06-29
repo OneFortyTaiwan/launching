@@ -1,4 +1,9 @@
 .navbar {
-  background-color: $blue;
-  border-color: darken($blue, 10%);
+  margin-bottom: 0;
+  background-color: $brand-primary;
+  border-color: darken($brand-primary, 10%);
+
+  .navbar-brand { color: $white; }
+  .navbar-nav > li > a { color: $white; }
+  .navbar-nav > .active > a { background-color: $brand-secondary; }
 }

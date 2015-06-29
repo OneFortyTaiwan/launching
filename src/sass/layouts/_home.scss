@@ -1,0 +1,17 @@
+#home {
+  position: relative;
+  height: calc(100vh - 50px);
+  @include image-section('discussion.jpg');
+
+  .content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%)  ;
+  }
+
+  .brand-title {
+    letter-spacing: 6px;
+  }
+}

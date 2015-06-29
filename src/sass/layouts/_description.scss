@@ -1,0 +1,11 @@
+.description {
+  // min-height: 50vh;
+  padding: 4rem 2rem;
+  background-color: $brand-primary;
+
+  .section-title {
+
+  }
+}
+
+#vision { @include image-section('discussion.jpg'); }

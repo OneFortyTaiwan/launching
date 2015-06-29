@@ -1,0 +1,6 @@
+@mixin image-section($src) {
+  background-image: url('../assets/images/#{$src}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
