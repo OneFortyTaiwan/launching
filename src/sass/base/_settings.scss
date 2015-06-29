@@ -4,29 +4,48 @@
 
 $red:                   #E16C6C !default;
 $orange:                #EC774B !default;
-$yellow:                #fff38d !default;
+$yellow:                #FEC34D !default;
 $green:                 #6FC191 !default;
-$blue:                  #74CEE4 !default;
+$blue:                  #3197DE !default;
 $purple:                #C389CE !default;
 $gray:                  #9CADB6 !default;
 $black:                 #000000 !default;
 $white:                 #ffffff !default;
 
-$brand-primary:         darken($yellow, 6.5%) !default;
-$brand-primary-comp:    darken($blue, 6.5%) !default;
-$brand-secondary:       darken($green, 6.5%) !default;
-$brand-secondary-comp:  darken($orange, 6.5%) !default;
+$brand-primary:         $yellow !default;
+$brand-primary-ana:     #FBE66C !default;
+$brand-secondary:       $blue;
+$brand-secondary-comp:  #A4D6DC !default;
 
 $brand-alert:           darken($red, 0%);
 $brand-success:         darken($green, 0%);
 $brand-warning:         darken($orange, 0%);
-$brand-info:            darken($blue, 0%);
+$brand-info:            #A4D6DC;
 
-$body-bg:               $yellow !default;
-// $text-color:            $gray-dark !default;
-// $link-color:            $brand-primary !default;
-// $link-hover-color:      darken($link-color, 15%) !default;
+$body-bg:               $white !default;
+$text-color:            $black !default;
+$link-color:            $brand-secondary !default;
+$link-hover-color:      darken($link-color, 15%) !default;
 // $link-hover-decoration: underline !default;
+$title-color: $brand-primary;
+$title-color-with-ground: $white;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          16px !default;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
 //== Grid system
 //

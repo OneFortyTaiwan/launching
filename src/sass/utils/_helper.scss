@@ -1,0 +1,38 @@
+.page-title {
+  color: $title-color;
+
+  &.with-ground { color: $title-color-with-ground; }
+  &.center { text-align: center; }
+}
+
+.page-subtitle {
+  color: $title-color;
+
+  &.with-ground { color: $title-color-with-ground; }
+  &.center { text-align: center; }
+}
+
+.section-title {
+  margin: 2rem 0;
+  color: $title-color;
+
+  &.with-ground { color: $title-color-with-ground; }
+  &.center { text-align: center; }
+}
+
+.section-subtitle {
+  margin: 2rem 0;
+  color: $title-color;
+
+  &.with-ground { color: $title-color-with-ground; }
+  &.center { text-align: center; }
+}
+
+.text {
+  line-height: 1.6;
+  font-size: 1.5rem;
+  color: $text-color;
+
+  &.with-ground { color: $title-color-with-ground; }
+  &.center { text-align: center; }
+}
