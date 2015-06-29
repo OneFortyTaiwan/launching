@@ -1,0 +1,10 @@
+<div class="container" ng-controller="TileCtrl as tileCtrl">
+  <div class="tile-container" ng-repeat="tile in tileCtrl.tiles">
+    <img src="{{tile.img}}" alt="{{tile.title}}" class="tile-img">
+    <h3 class="tile-title section-subtitle with-ground center">{{tile.title}}</h3>
+    <p class="tile-text text center" ng-repeat="text in tile.text">
+      <span>{{text}}</span>
+    </p>
+    <a href="{{tile.link}}" class="tile-btn btn btn-primary">{{tile.btn}}</a>
+  </div>
+</div>
