@@ -1,3 +1,9 @@
+/**
+ * [Title: basic title style settings]
+ * @class .page-title, .page-subtitle, .section-title, .section-subtitle
+ * @modifier [.with-ground] turn title color to contrast the background
+ * @modifier [.center] centerize the title text
+ */
 .page-title {
   font-size: 64px;
   color: $title-color;
@@ -17,6 +23,7 @@
 
 .section-title {
   margin: 2rem 0;
+  font-size: 36px;
   color: $title-color;
 
   &.with-ground { color: $title-color-with-ground; }
@@ -31,11 +38,34 @@
   &.center { text-align: center; }
 }
 
+/**
+ * [Text: the basic text style]
+ * @class .text
+ * @modifier [.with-ground] turn title color to contrast the background
+ * @modifier [.center] centerize the title text
+ */
 .text {
   line-height: 1.6;
-  font-size: 1.5rem;
+  font-size: 16px;
   color: $text-color;
 
   &.with-ground { color: $title-color-with-ground; }
   &.center { text-align: center; }
+}
+
+/**
+ * [Image: let the image to be at center both horizontally and vertically]
+ */
+.image-container {
+  position: relative;
+
+  > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+  }
 }
