@@ -1,13 +1,16 @@
-/**
- * [utils] Universal helpers and sass tools
- */
-@import '../sass/utils/helper';
 
 /**
  * [base] the boilerplate and the collection of global variables for the project
  */
 @import '../sass/base/settings';
 @import '../sass/base/base';
+
+/**
+ * [utils] Universal helpers and sass tools
+ */
+@import '../sass/utils/helper';
+@import '../sass/utils/cta-button';
+@import '../sass/utils/image-section';
 
 /**
  * [components] the independent UI components for the project
@@ -35,22 +38,6 @@
 @import '../sass/layouts/joinus';
 @import '../sass/layouts/sponsors';
 @import '../sass/layouts/description';
-
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
-}
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
