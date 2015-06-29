@@ -1,4 +1,5 @@
 .page-title {
+  font-size: 64px;
   color: $title-color;
 
   &.with-ground { color: $title-color-with-ground; }
@@ -6,6 +7,8 @@
 }
 
 .page-subtitle {
+  line-height: 1.6;
+  font-size: 28px;
   color: $title-color;
 
   &.with-ground { color: $title-color-with-ground; }
