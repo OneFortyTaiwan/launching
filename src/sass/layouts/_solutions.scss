@@ -1,0 +1,52 @@
+#solutions {
+  padding: 4rem 2rem;
+  background-color: $brand-primary;
+
+  .list-container {
+    padding-left: 0;
+    list-style: none;
+
+    .list-item {
+      margin: 3rem 0;
+
+      .image-container {
+        width: 100%;
+        height: 14rem;
+      }
+
+      .item-content {
+        width: 100%;
+
+        .item-note {
+          font-size: 18px;
+        }
+      }
+
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #solutions {
+    height: 100vh;
+
+    .list-container {
+      padding-left: 7rem;
+
+      .list-item {
+
+        .image-container {
+          width: 14rem;
+          height: 14rem;
+          float: left;
+          margin-right: 3.5rem;
+        }
+
+        .item-content {
+          width: calc(100% - 17.5rem);
+          float: left;
+        }
+      }
+    }
+  }
+}
