@@ -1,0 +1,48 @@
+#joinus {
+  padding: $section-padding-top $section-padding-side;
+  background-color: $brand-primary;
+
+  .tile-container {
+    width: 100%;
+    float: left;
+    margin-bottom: 6rem;
+    text-align: center;
+    background-color: $brand-primary;
+
+    .tile-title {
+
+    }
+
+    .tile-img {
+
+    }
+
+    .tile-text {
+
+    }
+
+    .tile-btn {
+      margin-top: 1.5rem;
+      padding: 4px 24px;
+      border: 0;
+      font-size: 18px;
+      background-color: $brand-secondary;
+      border-radius: 6px;
+
+      &:hover {
+        background-color: darken($brand-secondary, 10%);
+        transition: all .2s ease-in;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #joinus {
+    .tile-container {
+      width: 50%;
+      padding: 2.5%;
+      margin-bottom: 0;
+    }
+  }
+}

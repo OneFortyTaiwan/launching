@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('oneforty', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap'])
+angular
+  .module('oneforty', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap', 'duScroll'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
@@ -11,4 +12,6 @@ angular.module('oneforty', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
 
     $urlRouterProvider.otherwise('/');
   })
+  .value('duScrollDuration', 1000)
+  .value('duScrollOffset', 0)
 ;

@@ -1,25 +1,23 @@
-<div id="solutions" ng-controller="ListCtrl as listCtrl">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2 class="section-title with-ground">{{listCtrl.title}}</h2>
-      </div>
-      <div class="col-sm-10">
-        <ul class="list-container">
-          <li class="list-item clearfix" ng-repeat="solution in listCtrl.solutions">
-            <div class="image-container">
-              <img src="{{solution.img}}" alt="{{solution.title}}" class="item-img">
-            </div>
-            <div class="item-content">
-              <h3 class="item-title section-subtitle with-ground">
-                {{solution.title}}
-                <span class="item-note">{{solution.note}}</span>
-              </h3>
-              <p class="item-text text">{{solution.text}}</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+<div class="container" ng-controller="ListCtrl as listCtrl">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="section-title with-ground">{{listCtrl.title}}</h2>
+    </div>
+    <div class="col-sm-10">
+      <ul class="list-container">
+        <li class="list-item clearfix" ng-repeat="solution in listCtrl.solutions">
+          <div class="image-container">
+            <img src="{{solution.img}}" alt="{{solution.title}}" class="item-img">
+          </div>
+          <div class="item-content">
+            <h3 class="item-title section-subtitle with-ground">
+              {{solution.title}}
+              <span class="item-note">{{solution.note}}</span>
+            </h3>
+            <p class="item-text text">{{solution.text}}</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
