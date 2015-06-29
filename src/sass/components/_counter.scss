@@ -1,0 +1,47 @@
+.counter-list {
+  margin-top: 3rem;
+  list-style: none;
+
+  .list-item {
+    margin: 1rem 0;
+
+    .item-img {
+      display: block;
+      float: left;
+      margin-right: 3rem;
+    }
+
+    .item-num {
+      height: 88px;
+      float: left;
+
+      &.amount-25 {
+        width: 50rem;
+        background-image: url('/assets/images/dolls/doll-orange.png');
+      }
+      &.amount-15 {
+        width: 30rem;
+        background-image: url('/assets/images/dolls/doll-yellow.png');
+      }
+      &.amount-11 {
+        width: 22rem;
+        background-image: url('/assets/images/dolls/doll-green.png');
+      }
+      &.amount-7 {
+        width: 14rem;
+        background-image: url('/assets/images/dolls/doll-blue.png');
+      }
+    }
+
+    .item-content {
+      display: block;
+      float: left;
+
+      .name {
+        height: 3rem;
+        line-height: 3rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}

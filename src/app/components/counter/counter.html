@@ -1,0 +1,14 @@
+<div class="container" ng-controller="CounterCtrl as counterCtrl">
+  <h2 class="text">
+    在台灣平均每40個人，就有一位移工，他們分別來自...
+  </h2>
+  <ul class="counter-list">
+    <li class="list-item clearfix" ng-repeat="country in counterCtrl.countries">
+      <img src="{{country.img}}" alt="{{country.name}}" class="item-img">
+      <div class="item-num amount-{{country.amount}}" ></div>
+      <div class="item-content">
+        <!-- <span class="name">{{country.name}}</span> -->
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,20 +1,15 @@
-#gallery {
-  height: 100vh;
+#sponsors {
+  height: 50vh;
   padding: $section-padding-top $section-padding-side;
 
-  .photo-wall-container {
+  .brand-container {
     list-style: none;
 
-    .photo-container {
+    .brand {
       display: inline-block;
       float: left;
       width: 20%;
-      height: 14rem;
       padding: 2rem;
-
-      .photo {
-        width: 100%;
-      }
     }
   }
 }
