@@ -4,6 +4,18 @@
   border-color: darken($brand-primary, 10%);
 
   .navbar-brand { color: $white; }
-  .navbar-nav > li > a { color: $white; }
-  .navbar-nav > .active > a { background-color: $brand-secondary; }
+  .navbar-nav > li > a {
+    color: $white;
+
+    &:hover {
+      background-color: $brand-secondary;
+      transition: all .2s ease-in;
+    }
+  }
+
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus {
+    background-color: $brand-secondary;
+  }
 }
