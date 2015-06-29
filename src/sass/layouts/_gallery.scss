@@ -1,19 +1,34 @@
 #gallery {
-  height: 100vh;
   padding: $section-padding-top $section-padding-side;
 
   .photo-wall-container {
+    padding-left: 0;
     list-style: none;
 
     .photo-container {
       display: inline-block;
       float: left;
-      width: 20%;
+      width: 50%;
       height: 14rem;
       padding: 2rem;
 
       .photo {
         width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #gallery {
+    height: 100vh;
+
+    .photo-wall-container {
+      .photo-container {
+        float: left;
+        width: 20%;
+        height: 14rem;
+        padding: 2rem;
       }
     }
   }
