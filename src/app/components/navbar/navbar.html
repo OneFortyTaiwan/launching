@@ -1,4 +1,4 @@
-<nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavbarCtrl">
+<nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavbarCtrl as navbarCtrl">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
@@ -8,13 +8,10 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">關於我們</a></li>
-        <li><a ng-href="#">背景</a></li>
-        <li><a ng-href="#">願景</a></li>
-        <li><a ng-href="#">困境</a></li>
-        <li><a ng-href="#">我們的計畫</a></li>
-        <li><a ng-href="#">活動記錄</a></li>
-        <li><a ng-href="#">加入我們</a></li>
+        <li ng-repeat="nav in navbarCtrl.navs"
+            ng-class="{'active': nav.isActive}">
+            <a href="" ng-click="navbarCtrl.moveTo(nav.link)">{{nav.name}}</a>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

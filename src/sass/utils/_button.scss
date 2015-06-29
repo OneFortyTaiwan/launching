@@ -1,0 +1,15 @@
+@mixin button($bg-color: $brand-secondary, $color: $white) {
+  min-width: 5rem;
+  padding: 0 2rem;
+  font-size: 18px;
+  display: inline-block;
+  background-color: $bg-color;
+  color: $color;
+  border-radius: 5px;
+
+  &:hover,
+  &:active {
+    color: darken($color, 10%);
+    transition: all .2s ease-in;
+  }
+}
