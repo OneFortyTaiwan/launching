@@ -1,0 +1,29 @@
+#sponsors {
+  padding: $section-padding-top $section-padding-side;
+
+  .brand-container {
+    padding-left: 0;
+    list-style: none;
+
+    .brand {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #sponsors {
+    height: 50vh;
+
+    .brand-container {
+
+      .brand {
+        width: 20%;
+      }
+    }
+  }
+}

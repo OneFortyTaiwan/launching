@@ -1,9 +1,15 @@
 .navbar {
   margin-bottom: 0;
+  border-bottom-width: 0;
   background-color: $brand-primary;
   border-color: darken($brand-primary, 10%);
 
-  .navbar-brand { color: $white; }
+  .navbar-brand {
+    color: transparent;
+    background-color: $brand-secondary;
+    background-image: url('/assets/images/logo.png');
+    background-size: contain;
+  }
   .navbar-nav > li > a {
     color: $white;
 
