@@ -11,12 +11,17 @@
   }
 
   .navbar-brand {
-    width: 10rem;
+    width: 12rem;
     margin-right: 2rem;
     color: transparent;
     background-color: $brand-secondary;
     background-image: url('/assets/images/logo.png');
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .navbar-nav > li > a {
