@@ -2,8 +2,10 @@
 
 angular
   .module('oneforty')
-  .controller('NavbarCtrl', ['$document', function ($document) {
+  .controller('NavbarCtrl', ['$window', '$document', function ($window, $document) {
     var self = this;
+    var $win = angular.element($window);
+    var $nav = angular.element(document.getElementById('navbar'));
 
     self.currentSection = '';
     self.navs = [
@@ -38,6 +40,14 @@ angular
         isActive: false
       }
     ];
+
+    $win.on('scroll', function() {
+      if ($win.scrollTop() >= $nav.offset().top) {
+        $nav.addClass('is-fixed');
+      } else {
+        $nav.removeClass('is-fixed');
+      }
+    });
 
     self.moveTo = function(section) {
       angular.forEach(self.navs, function(nav) {

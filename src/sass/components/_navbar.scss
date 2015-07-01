@@ -1,20 +1,38 @@
 .navbar {
   margin-bottom: 0;
   border-bottom-width: 0;
-  background-color: $brand-primary;
-  border-color: darken($brand-primary, 10%);
+  background-color: $brand-secondary;
+  border-color: darken($brand-secondary, 10%);
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 
   .navbar-brand {
+    width: 12rem;
+    margin-right: 2rem;
     color: transparent;
     background-color: $brand-secondary;
     background-image: url('/assets/images/logo.png');
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
   }
+
   .navbar-nav > li > a {
+    min-width: 10rem;
     color: $white;
+    font-size: 1.8rem;
+    text-align: center;
+
 
     &:hover {
-      background-color: $brand-secondary;
+      background-color: $brand-primary;
       transition: all .2s ease-in;
     }
   }
@@ -22,6 +40,24 @@
   .navbar-nav > .active > a,
   .navbar-nav > .active > a:hover,
   .navbar-nav > .active > a:focus {
-    background-color: $brand-secondary;
+    background-color: $brand-primary;
+  }
+
+  /**
+   * [Mobile navigation style]
+   * @type {[type]}
+   */
+  .navbar-collapse { border-color: transparent; }
+  .navbar-toggle {
+    padding: 7px 10px;
+    border-color: transparent;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $brand-primary;
+    }
+
+    .icon-bar { height: 4px; }
   }
 }
