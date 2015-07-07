@@ -1,63 +1,90 @@
-.navbar {
-  margin-bottom: 0;
-  border-bottom-width: 0;
-  background-color: $brand-secondary;
-  border-color: darken($brand-secondary, 10%);
+$navbar-height: 44px;
+$navbar-mobile-height: 50px;
+$navbar-bg-color: $white;
+$navbar-text-color: $text-color;
+$navbar-bg-hover: $brand-primary;
+$navbar-text-hover: $white;
 
-  &.is-fixed {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+.navbar {
+  width: 100%;
+  height: $navbar-mobile-height;
+  min-height: $navbar-height;
+  margin-bottom: 0;
+  border-bottom: 0;
+  background-color: $navbar-bg-color;
+
+  .navbar-collapse { border: 0; }
 
   .navbar-brand {
-    width: 12rem;
-    margin-right: 2rem;
+    width: 10rem;
+    height: $navbar-mobile-height;
+    margin-right: 15px;
     color: transparent;
-    background-color: $brand-secondary;
+    background-color: $navbar-bg-color;
     background-image: url('/assets/images/logo.png');
-    background-size: contain;
+    background-size: 70%;
     background-repeat: no-repeat;
-    background-position-x: 50%;
+    background-position: 50% 50%;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
   }
 
-  .navbar-nav > li > a {
-    min-width: 10rem;
-    color: $white;
-    font-size: 1.8rem;
-    text-align: center;
+  .navbar-nav {
+    margin: 0 -15px;
+    border-bottom: 1px solid #f0f0f0;
 
+    > li > a {
+      min-width: 10rem;
+      padding: 11.5px 15px;
+      color: $navbar-text-color;
+      background-color: $navbar-bg-color;
+      font-size: 1.7rem;
+      text-align: center;
 
-    &:hover {
-      background-color: $brand-primary;
-      transition: all .2s ease-in;
+      &:hover {
+        color: $navbar-text-hover;
+        background-color: $navbar-bg-hover;
+        transition: all .2s ease-in;
+      }
     }
   }
 
   .navbar-nav > .active > a,
   .navbar-nav > .active > a:hover,
   .navbar-nav > .active > a:focus {
-    background-color: $brand-primary;
+    background-color: $navbar-bg-hover;
   }
 
   /**
    * [Mobile navigation style]
    * @type {[type]}
    */
+
   .navbar-collapse { border-color: transparent; }
   .navbar-toggle {
     padding: 7px 10px;
+    margin-bottom: 0;
     border-color: transparent;
+    background-color: $navbar-bg-hover;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: $brand-primary;
+      background-color: darken($navbar-bg-hover, 10%);
     }
 
     .icon-bar { height: 4px; }
+  }
+}
+
+
+@media (min-width: $screen-sm-min) {
+  .navbar {
+    height: $navbar-height;
+    border-bottom: 1px solid #f0f0f0;
+
+    .navbar-brand { height: $navbar-height - 1px; }
+    .navbar-nav { border-bottom: 0; }
   }
 }

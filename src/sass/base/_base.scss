@@ -1,10 +1,15 @@
 .header-container {
-
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
 }
 
 .footer-container {
-  padding: 3rem 1rem;
-  background-color: $blue;
+  padding: 1rem 1rem;
+  background-color: $white;
 }
 
 .main-container {
