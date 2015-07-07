@@ -8,7 +8,7 @@ $yellow:                #FEC34D !default;
 $green:                 #6FC191 !default;
 $blue:                  #3197DE !default;
 $purple:                #C389CE !default;
-$gray:                  #9CADB6 !default;
+$gray:                  #58585B !default;
 $black:                 #000000 !default;
 $white:                 #ffffff !default;
 
@@ -23,7 +23,7 @@ $brand-warning:         darken($orange, 0%);
 $brand-info:            #A4D6DC;
 
 $body-bg:               $white !default;
-$text-color:            $black !default;
+$text-color:            $gray !default;
 $link-color:            $brand-secondary !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 // $link-hover-decoration: underline !default;
