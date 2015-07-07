@@ -1,0 +1,41 @@
+@mixin icon-image($src) {
+  background-image: url('/assets/images/icons/#{$src}.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+#social {
+  padding: $section-padding-top $section-padding-side;
+  background-color: $brand-primary;
+
+  .section-title {
+    margin-bottom: 4rem;
+  }
+
+  .social-icons {
+    list-style: none;
+
+    .icon {
+      float: left;
+      width: 25%;
+      padding: 1%;
+
+      > a {
+        display: block;
+        height: 13rem;
+      }
+
+      &.icon-facebook > a { @include icon-image(facebook); }
+      &.icon-email > a { @include icon-image(email); }
+      &.icon-instagram > a { @include icon-image(instagram); }
+      &.icon-google-plus > a { @include icon-image(gplus); }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #social {
+
+  }
+}

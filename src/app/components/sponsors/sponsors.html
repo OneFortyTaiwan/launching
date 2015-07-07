@@ -1,8 +1,8 @@
 <div class="container" ng-controller="SponsorsCtrl as sponsorsCtrl">
   <h2 class="section-title center">特別感謝</h2>
   <ul class="brand-container">
-    <li ng-repeat="sponsor in sponsorsCtrl.sponsors" class="brand">
-      <img ng-src="{{sponsor.img}}" alt="{{sponsor.brand}}">
-    </li>
+    <li ng-repeat="sponsor in sponsorsCtrl.sponsors"
+        class="brand brand-{{sponsor.slug}}"
+        title="{{sponsor.name}}"></li>
   </ul>
 </div>

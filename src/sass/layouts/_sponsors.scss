@@ -1,3 +1,10 @@
+@mixin sponsor-image($src, $size: 80%) {
+  background-image: url('/assets/images/sponsors/#{$src}.png');
+  background-size: $size;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
 #sponsors {
   padding: $section-padding-top $section-padding-side;
 
@@ -9,20 +16,29 @@
       display: inline-block;
       float: left;
       width: 50%;
-      padding: 2rem;
+      height: 6rem;
+      margin: 2rem 0;
       text-align: center;
+
+      &.brand-cfc { @include sponsor-image('career_for_change', 80%); }
+      &.brand-citron { @include sponsor-image('citron', contain); }
+      &.brand-forgood { @include sponsor-image('for_good', contain); }
+      &.brand-gat { @include sponsor-image('give_and_take', 80%); }
+      &.brand-ih { @include sponsor-image('impact_hub', contain); }
+      &.brand-selib { @include sponsor-image('southeastliberary', 80%); }
     }
   }
 }
 
 @media (min-width: $screen-sm-min) {
   #sponsors {
-    height: 50vh;
+    height: 75vh;
 
     .brand-container {
 
       .brand {
-        width: 20%;
+        width: 33.3%;
+        height: 10rem;
       }
     }
   }

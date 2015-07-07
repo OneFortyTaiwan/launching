@@ -25,6 +25,7 @@
 @import '../sass/components/list';
 @import '../sass/components/form';
 @import '../sass/components/photoWall';
+@import '../sass/components/mailchimp';
 
 /**
  * [layouts] the section specific style for the project
@@ -38,6 +39,7 @@
 @import '../sass/layouts/joinus';
 @import '../sass/layouts/sponsors';
 @import '../sass/layouts/description';
+@import '../sass/layouts/social';
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
