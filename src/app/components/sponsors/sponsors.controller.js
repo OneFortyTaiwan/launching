@@ -7,24 +7,34 @@ angular
 
     self.sponsors = [
       {
-        name: 'Agricola',
-        img: '/assets/images/yeoman.png'
+        name: 'Career for Change',
+        slug: 'cfc',
+        img: '/assets/images/sponsors/career_for_change.png'
       },
       {
-        name: 'Barista',
-        img: '/assets/images/yeoman.png'
+        name: 'Give & Take',
+        slug: 'gat',
+        img: '/assets/images/sponsors/give_and_take.png'
       },
       {
-        name: 'Citadles',
-        img: '/assets/images/yeoman.png'
+        name: '燦爛時光',
+        slug: 'selib',
+        img: '/assets/images/sponsors/southeastliberary.png'
       },
       {
-        name: 'Daemon',
-        img: '/assets/images/yeoman.png'
+        name: 'Citron',
+        slug: 'citron',
+        img: '/assets/images/sponsors/citron.png'
       },
       {
-        name: 'Esta',
-        img: '/assets/images/yeoman.png'
+        name: '不鳥穀',
+        slug: 'forgood',
+        img: '/assets/images/sponsors/for_good.png'
+      },
+      {
+        name: 'Impact Hub',
+        slug: 'ih',
+        img: '/assets/images/sponsors/impact_hub.png'
       }
     ];
   }]);
