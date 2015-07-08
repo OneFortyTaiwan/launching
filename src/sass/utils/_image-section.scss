@@ -1,7 +1,7 @@
-@mixin image-section($src) {
-  background-image: url('../assets/images/#{$src}');
+@mixin image-section($src, $attachment: fixed, $size: cover) {
+  background-image: url('../assets/images/backgrounds/#{$src}');
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  background-attachment: $attachment;
+  background-position: 0 0;
+  background-size: $size;
 }

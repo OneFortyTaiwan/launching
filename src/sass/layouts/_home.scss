@@ -1,7 +1,7 @@
 #home {
   position: relative;
   height: calc(100vh - 50px);
-  @include image-section('discussion.jpg');
+  @include image-section('headfold-station.png');
 
   .content-container {
     position: absolute;
