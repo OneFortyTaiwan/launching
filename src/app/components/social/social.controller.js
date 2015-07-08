@@ -16,7 +16,7 @@ angular
       },
       {
         name: 'instagram',
-        href: 'https://instagram.com/'
+        href: 'https://instagram.com/onefortytaiwan/'
       },
       {
         name: 'google-plus',
