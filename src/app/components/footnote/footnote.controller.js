@@ -7,7 +7,8 @@ angular
 
     self.brand = {
       name: 'One-Forty',
-      url: 'http://oneforty.org'
+      url: 'http://oneforty.org',
+      email: 'onefortytaiwan@gmail.com'
     }
 
   }]);
