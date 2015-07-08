@@ -1,5 +1,13 @@
 <div class="footnote clearfix" ng-controller="FootnoteCtrl as footnoteCtrl">
-  <p>With ♥ from
-    <a href="{{footnoteCtrl.brand.url}}">{{footnoteCtrl.brand.name}}</a>
-  </p>
+  <div class="message-container">
+    <span class="message">
+      With ♥ from
+      <a href="{{footnoteCtrl.brand.url}}">{{footnoteCtrl.brand.name}}</a>
+    </span>
+    <span class="message">
+      Email:&nbsp;
+      <a href="mailto:{{footnoteCtrl.brand.email}}?subject=[留言]我想和One-Forty說...">{{footnoteCtrl.brand.email}}</a>
+    </span>
+    <span class="message">&copy; 2015 One-Forty. All rights reserved.</span>
+  </div>
 </div>

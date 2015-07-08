@@ -7,4 +7,9 @@
   }
 }
 
-#vision { @include image-section('discussion.jpg'); }
+#about-us {}
+#dream { @include image-section('dream.png', scroll, 100%); }
+#solution-title {
+  @include image-section('solution-title.png', scroll, contain);
+  height: 50vh;
+}

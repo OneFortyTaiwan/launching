@@ -11,9 +11,12 @@
       width: 50%;
       height: 14rem;
       padding: 2rem;
+      overflow: hidden;
 
       .photo {
         width: 100%;
+        background-color: #f0f0f0;
+        transition: all .2s ease-in;
       }
     }
   }
@@ -21,7 +24,6 @@
 
 @media (min-width: $screen-sm-min) {
   #gallery {
-    height: 100vh;
 
     .photo-wall-container {
       .photo-container {
