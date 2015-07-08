@@ -5,8 +5,6 @@ angular
   .controller('ListCtrl', [function() {
     var self = this;
 
-    self.title = '於是，ONE-FORTY發起3項計畫';
-
     self.solutions = [
       {
         title: '千層派對 ONE-FORTY Fun Event',
