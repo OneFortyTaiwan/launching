@@ -5,6 +5,8 @@ angular
   .controller('CounterCtrl', [function() {
     var self = this;
 
+    self.people = createPeopleWall(7, 30);
+
     self.countries = [
       {
         name: '印尼',
@@ -56,5 +58,21 @@ angular
 
       return arr;
     };
+
+    function createPeopleWall(row, column) {
+      var arr = [];
+
+      for(var i = 0; i < row; i++) {
+        arr[i] = [];
+
+        for (var j = 0; j < column; j++) {
+          arr[i][j] = j;
+        }
+      }
+
+      return arr;
+    }
+
+    console.log(self.people);
 
   }]);
