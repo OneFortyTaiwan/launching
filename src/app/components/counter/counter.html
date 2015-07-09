@@ -6,13 +6,16 @@
     <ul class="people-wall">
       <li class="wall-row"
           ng-repeat="row in counterCtrl.people">
-          <img src="/assets/images/dolls/doll-pale-gray.png"
-               alt="台灣居民"
-               ng-repeat="item in row"
-               class="doll">
+          <object type="image/svg+xml"
+                  data="/assets/images/dolls/doll.svg"
+                  alt="台灣居民"
+                  ng-repeat="(key, value) in row"
+                  ng-class="value"
+                  class="doll"></object>
       </li>
     </ul>
   </div>
+  <button ng-click="counterCtrl.changeColor()">Test</button>
 
   <div class="counter-countries">
     <h2 class="section-title center">他們從哪裡來？在台灣做哪些工作？</h2>
@@ -24,7 +27,7 @@
           <figcaption class="img-name">{{country.name}}</figcaption>
         </figure>
         <div class="item-content">
-          <img src="/assets/images/dolls/doll-pale-gray.png"
+          <img src="/assets/images/dolls/doll.svg"
                alt="{{country.name + ':' + country.amount + '萬人'}}"
                ng-repeat="i in counterCtrl.getAmount(country.amount)"
                class="doll">

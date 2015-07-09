@@ -59,20 +59,33 @@ angular
       return arr;
     };
 
+    self.changeColor = function() {
+      var $elements = document.getElementsByClassName('doll-active');
+      for (var i = 0, j = $elements.length; i < j; i++) {
+        $elements[i].contentDocument.getElementById('doll-head').style.fill = '#FEC34D';
+        $elements[i].contentDocument.getElementById('doll-body').style.fill = '#FEC34D';
+      }
+    };
+
     function createPeopleWall(row, column) {
       var arr = [];
+      var random = 0;
 
       for(var i = 0; i < row; i++) {
         arr[i] = [];
+        random = Math.floor(Math.random() * column);
 
         for (var j = 0; j < column; j++) {
-          arr[i][j] = j;
+          if (j === random) {
+            arr[i][j] = 'doll-active';
+          } else {
+            arr[i][j] = j;
+          }
         }
       }
 
       return arr;
     }
 
-    console.log(self.people);
 
   }]);
