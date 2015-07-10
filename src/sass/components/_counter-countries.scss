@@ -1,4 +1,13 @@
 .counter-countries {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 1s ease-in;
+
+  &.hidden {
+    opacity: 0;
+  }
 
   /**
    * Country-list layout

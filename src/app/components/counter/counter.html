@@ -1,6 +1,6 @@
 <div ng-controller="CounterCtrl as counterCtrl">
 
-  <div class="counter-people">
+  <div class="counter-people" ng-class="{hidden: !counterCtrl.isFirst}">
     <h2 class="section-title center">你知道嗎？關於東南亞移工</h2>
     <h3 class="text center">在台灣平均每40個人，就有一位移工，他們分別來自...</h3>
     <ul class="people-wall">
@@ -9,15 +9,16 @@
           <object type="image/svg+xml"
                   data="/assets/images/dolls/doll.svg"
                   alt="台灣居民"
-                  ng-repeat="(key, value) in row"
-                  ng-class="value"
-                  class="doll"></object>
+                  ng-repeat="val in row track by $index"
+                  ng-class="{'doll-active': val, 'doll-normal': !val, pulse: val, infinite: val}"
+                  class="doll animated"></object>
       </li>
     </ul>
+    <button ng-click="counterCtrl.changeColor()">Test</button>
+    <button ng-click="counterCtrl.moveLeft()">Move</button>
   </div>
-  <button ng-click="counterCtrl.changeColor()">Test</button>
 
-  <div class="counter-countries">
+  <div class="counter-countries" ng-class="{hidden: counterCtrl.isFirst}">
     <h2 class="section-title center">他們從哪裡來？在台灣做哪些工作？</h2>
     <ul class="country-list">
       <li class="list-item clearfix animated"

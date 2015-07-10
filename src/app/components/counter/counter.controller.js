@@ -2,7 +2,7 @@
 
 angular
   .module('oneforty')
-  .controller('CounterCtrl', [function() {
+  .controller('CounterCtrl', ['$timeout', function($timeout) {
     var self = this;
 
     self.people = createPeopleWall(7, 30);
@@ -48,6 +48,8 @@ angular
       }
     ];
 
+    self.isFirst = true;
+
     self.getAmount = function(amount) {
       var arr = [];
       var num = Math.ceil(amount / 2);
@@ -67,25 +69,37 @@ angular
       }
     };
 
+    self.moveLeft = function() {
+      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
+      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
+      var $counterPeople = angular.element(document.querySelector('.counter-people'));
+
+      $doll.addClass('zoomOut');
+      $activeDoll.removeClass('infinite pulse');
+      $activeDoll.addClass('doll-left');
+
+      $timeout(function() {
+        self.isFirst = false;
+      }, 4000);
+    };
+
     function createPeopleWall(row, column) {
       var arr = [];
       var random = 0;
 
       for(var i = 0; i < row; i++) {
         arr[i] = [];
-        random = Math.floor(Math.random() * column);
+        random = Math.floor(Math.random() * (column - 1) );
 
         for (var j = 0; j < column; j++) {
           if (j === random) {
-            arr[i][j] = 'doll-active';
+            arr[i][j] = true;
           } else {
-            arr[i][j] = j;
+            arr[i][j] = false;
           }
         }
       }
 
       return arr;
     }
-
-
   }]);
