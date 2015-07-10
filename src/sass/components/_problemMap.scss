@@ -1,0 +1,72 @@
+#problem-map {
+
+  .map-container {
+    position: relative;
+    height: 75vh;
+
+    .map-text {
+      position: absolute;
+      left: 10%;
+      bottom: 0%;
+      display: block;
+      width: 80%;
+      color: $text-color;
+      font-size: 2rem;
+      line-height: 1.6;
+      z-index: 10;
+    }
+
+    .map-taiwan {
+      display: none;
+      z-index: 8;
+    }
+
+    .map-plane {
+      display: none;
+    }
+
+    .map-southeastasia {
+      position: absolute;
+      top: 10%;
+      right: 15%;
+      z-index: 9;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #problem-map {
+
+    .map-container {
+      height: 100vh;
+
+      .map-text {
+        position: absolute;
+        left: 25%;
+        bottom: 25%;
+        width: 43rem;
+        font-size: 2.25rem;
+      }
+
+      .map-taiwan {
+        position: absolute;
+        top: 15%;
+        left: 12%;
+        display: block;
+      }
+
+      .map-plane {
+        position: absolute;
+        top: 33%;
+        left: 33%;
+        display: block;
+      }
+
+      .map-southeastasia {
+        position: absolute;
+        top: 22%;
+        right: 12%;
+      }
+    }
+  }
+}

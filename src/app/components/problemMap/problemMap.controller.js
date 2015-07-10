@@ -2,7 +2,7 @@
 
 angular
   .module('oneforty')
-  .controller('MapCtrl', [function() {
+  .controller('ProblemMapCtrl', [function() {
     var self = this;
 
   }]);
