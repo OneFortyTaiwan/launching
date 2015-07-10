@@ -1,13 +1,17 @@
-<div ng-controller="CarouselCtrl as carouselCtrl">
-  <div>
-    <carousel interval="carouselCtrl.myInterval">
-      <slide ng-repeat="slide in carouselCtrl.slides" active="slide.active">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-        <div class="carousel-caption">
-          <h4>Slide {{$index}}</h4>
-          <p>{{slide.text}}</p>
+<div ng-controller="CarouselCtrl as carouselCtrl" class="carousel-container">
+  <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-auto-slide rn-carousel-buffered rn-carousel-transition="slide" class="carousel-slides">
+    <li ng-repeat="slide in carouselCtrl.slides"
+        ng-class="'slide-' + slide.id"
+        class="slide">
+        <div ng-style="{'background-image': 'url(' + slide.img + ')'}" class="slide-image">
+          <h2 class="page-subtitle with-ground center">
+            {{slide.text1}}<br>{{slide.text2}}
+          </h2>
+          <h1 class="page-title brand-title with-ground center">One-Forty</h1>
         </div>
-      </slide>
-    </carousel>
+    </li>
+  </ul>
+
+  <div rn-carousel-indicators ng-if="carouselCtrl.slides.length > 1" slides="carouselCtrl.slides" rn-carousel-index="carouselIndex" class="carousel-indicator">
   </div>
 </div>
