@@ -1,0 +1,79 @@
+#problem-dialog {
+
+  .problems-container {
+    position: relative;
+
+    .problem-dialog {
+      width: 100%;
+      padding: 3rem;
+      background-color: $brand-primary;
+
+      .dialog-title {
+        color: $white;
+      }
+
+      .dialog-text {
+
+      }
+
+      &.dialog-1 {}
+      &.dialog-2 {}
+      &.dialog-3 {}
+      &.dialog-4 {}
+    }
+
+    .confused-migrant-container {
+      position: relative;
+      background-color: $brand-primary;
+      height: 40vw;
+
+      .confused-migrant {
+        position: absolute;
+        bottom: 0%;
+        right: 0%;
+        width: 30%;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  #problem-dialog {
+
+    .problems-container {
+      position: relative;
+      height: 100vh;
+
+      .problem-dialog {
+        position: absolute;
+        width: 35%;
+        border-radius: 20px;
+
+        .dialog-title {
+
+        }
+
+        .dialog-text {
+
+        }
+
+        &.dialog-1 { top: 5%; left: 5%; }
+        &.dialog-2 { bottom: 5%; left: 5%; }
+        &.dialog-3 { top: 5%; right: 5%; }
+        &.dialog-4 { bottom: 5%; right: 5%; }
+      }
+
+      .confused-migrant-container {
+        position: static;
+        background-color: transparent;
+
+        .confused-migrant {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: auto;
+        }
+      }
+    }
+  }
+}

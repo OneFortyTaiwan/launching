@@ -1,0 +1,9 @@
+<div ng-controller="ProblemDialogCtrl as problemDialogCtrl" class="problems-container">
+  <div ng-repeat="problem in problemDialogCtrl.problems" class="problem-dialog dialog-{{problem.id}}">
+    <h3 class="dialog-title">{{problem.title}}</h3>
+    <p class="dialog-text text">{{problem.text}}</p>
+  </div>
+  <div class="confused-migrant-container">
+    <img src="/assets/images/dolls/doll-boy.png" alt="困擾的移工" class="confused-migrant">
+  </div>
+</div>

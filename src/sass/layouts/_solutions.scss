@@ -17,8 +17,23 @@
       .item-content {
         width: 100%;
 
-        .item-note {
-          font-size: 18px;
+        .item-title {
+          margin-bottom: 0;
+          text-align: center;
+
+          .title-eng {
+            display: block;
+            margin: .5rem 0;
+          }
+
+          .item-note {
+            font-size: 18px;
+          }
+        }
+
+        .item-subtitle {
+          margin-bottom: 1.5rem;
+          text-align: center;
         }
       }
 
@@ -28,7 +43,6 @@
 
 @media (min-width: $screen-sm-min) {
   #solutions {
-    height: 100vh;
 
     .list-container {
       padding-left: 7rem;
@@ -45,6 +59,18 @@
         .item-content {
           width: calc(100% - 17.5rem);
           float: left;
+
+          .item-title {
+            text-align: left;
+
+            .title-eng {
+              display: inline;
+            }
+          }
+
+          .item-subtitle {
+            text-align: left;
+          }
         }
       }
     }
