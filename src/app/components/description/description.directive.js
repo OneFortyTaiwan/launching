@@ -6,11 +6,12 @@ angular
 
     return {
       scope: {
-        id: '@',
+        sectionId: '@',
         title: '@',
         imageBack: '='
       },
       restrict: 'AE',
+      replace: true,
       templateUrl: '/app/components/description/description.html',
       transclude: true,
       link: function($scope, element, attrs, ctrl, transclude) {

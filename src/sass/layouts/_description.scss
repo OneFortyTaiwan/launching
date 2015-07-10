@@ -8,8 +8,43 @@
 }
 
 #about-us {}
-#dream { @include image-section('dream.png', scroll, 100%); }
+#dream {
+  @include image-section('dream.png', scroll, cover);
+  background-position: 45% 0;
+}
+
 #solution-title {
-  @include image-section('solution-title.png', scroll, contain);
-  height: 50vh;
+  @include image-section('solution-title.png', scroll, cover);
+  background-position: 50% 0;
+}
+
+/**
+ * [For tablet screen]
+ */
+@media (min-width: $screen-sm-min) {
+  #dream {
+    @include image-section('dream.png', scroll, cover);
+  }
+
+  #solution-title {
+
+  }
+}
+
+
+/**
+ * [For desktop screen]
+ */
+@media (min-width: $screen-lg-min) {
+  .description {
+    height: auto;
+  }
+
+  #dream {
+    @include image-section('dream.png', scroll, 100%);
+  }
+
+  #solution-title {
+    @include image-section('solution-title.png', scroll, 100%);
+  }
 }
