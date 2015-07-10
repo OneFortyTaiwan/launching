@@ -38,6 +38,25 @@
   &.center { text-align: center; }
 }
 
+@media (min-width: $screen-sm-min) {
+  .section-title {
+    &:before,
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 7vw;
+      height: 2px;
+      max-width: 8rem;
+      margin: 1rem 2rem;
+      background-color: $title-color;
+    }
+
+    &.with-ground:before,
+    &.with-ground:after {
+      background-color: $title-color-with-ground;
+    }
+  }
+}
 /**
  * [Text: the basic text style]
  * @class .text
