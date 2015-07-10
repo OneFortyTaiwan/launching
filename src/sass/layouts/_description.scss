@@ -46,5 +46,10 @@
 
   #solution-title {
     @include image-section('solution-title.png', scroll, 100%);
+    height: 41vh;
+
+    .section-title {
+      padding-top: 10vh;
+    }
   }
 }
