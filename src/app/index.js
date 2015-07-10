@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('oneforty', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap', 'duScroll'])
+  .module('oneforty', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap', 'duScroll', 'angular-carousel'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {

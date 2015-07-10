@@ -1,0 +1,62 @@
+.carousel-container {
+  position: relative;
+  height: 100vh;
+
+  .carousel-slides {
+    height: 100vh;
+
+    .slide {
+      display: block;
+
+      .slide-image {
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 0 0;
+        background-size: 300%;
+      }
+    }
+
+    .page-subtitle {
+      margin-top: 0;
+      padding-top: 35vh;
+    }
+  }
+
+  .carousel-indicator {
+    position: absolute;
+    bottom: 15%;
+    left: 45%;
+
+    span {
+      display: inline-block;
+      margin: .5rem;
+      font-size: 2.5rem;
+
+      &.active {
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .carousel-container {
+
+    .carousel-slides {
+
+      .slide {
+        display: block;
+
+        .slide-image {
+          height: 500%;
+          background-size: 110%;
+        }
+      }
+
+      .page-subtitle {
+        font-size: 28px;
+      }
+    }
+  }
+}
