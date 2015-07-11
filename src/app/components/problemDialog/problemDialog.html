@@ -1,5 +1,7 @@
 <div ng-controller="ProblemDialogCtrl as problemDialogCtrl" class="problems-container">
-  <div ng-repeat="problem in problemDialogCtrl.problems" class="problem-dialog dialog-{{problem.id}}">
+  <div ng-repeat="problem in problemDialogCtrl.problems"
+       ng-show="problemDialogCtrl.problemsShown"
+       class="problem-dialog dialog-{{problem.id}}">
     <h3 class="dialog-title">{{problem.title}}</h3>
     <p class="dialog-text text">{{problem.text}}</p>
   </div>

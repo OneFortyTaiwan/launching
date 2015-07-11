@@ -2,8 +2,15 @@
 
 angular
   .module('oneforty')
-  .controller('CounterCtrl', [function() {
+  .controller('CounterCtrl', ['$scope', '$timeout', function($scope, $timeout) {
     var self = this;
+    var activateDolls = activateDolls;
+    var shiftDolls = shiftDolls;
+
+    /**
+     * Varibles used in view
+     */
+    self.people = createPeopleWall(3, 30);
 
     self.countries = [
       {
@@ -46,6 +53,17 @@ angular
       }
     ];
 
+    self.currentStage = '';
+    self.elementState = {
+      flags: false,
+      countryDolls: false,
+      amount: false,
+      jobs: false
+    };
+
+    /**
+     * Rendering functions used in view
+     */
     self.getAmount = function(amount) {
       var arr = [];
       var num = Math.ceil(amount / 2);
@@ -56,5 +74,99 @@ angular
 
       return arr;
     };
+
+    /**
+     * Event handlers when window scrolls
+     */
+    $scope.$on('isPeople', function($evt, active, locals) {
+      if(!active) return;
+      self.currentStage = 'people';
+    });
+
+    $scope.$on('isCountries', function($evt, active, locals) {
+      if(!active) return;
+      self.currentStage = 'countries';
+    });
+
+    $scope.$on('activateDolls', function($evt, active, locals) {
+      if(!active) return;
+      activateDolls();
+    });
+
+    $scope.$on('shiftDolls', function($evt, active, locals) {
+      if(!active) return;
+      shiftDolls();
+    });
+
+    $scope.$on('showCountryDolls', function($evt, active, locals) {
+      if(!active) return;
+      self.elementState.countryDolls = active;
+    });
+
+    $scope.$on('showFlags', function($evt, active, locals) {
+      if(!active) return;
+      self.elementState.flags = active;
+    });
+
+    $scope.$on('showAmount', function($evt, active, locals) {
+      if(!active) return;
+      self.elementState.amount = active;
+    });
+
+    $scope.$on('showJobs', function($evt, active, locals) {
+      if(!active) return;
+      self.elementState.jobs = active;
+    });
+
+    /**
+     * Private functions used in the controller
+     */
+    function createPeopleWall(row, column) {
+      var arr = [];
+      var random = 0;
+
+      for(var i = 0; i < row; i++) {
+        arr[i] = [];
+        random = Math.floor(Math.random() * (column - 1) );
+
+        for (var j = 0; j < column; j++) {
+          if (j === random) {
+            arr[i][j] = true;
+          } else {
+            arr[i][j] = false;
+          }
+        }
+      }
+
+      return arr;
+    }
+
+    function activateDolls() {
+      var $elements = document.getElementsByClassName('doll-active');
+      for (var i = 0, j = $elements.length; i < j; i++) {
+        $elements[i].contentDocument.getElementById('doll-head').style.fill = '#FEC34D';
+        $elements[i].contentDocument.getElementById('doll-body').style.fill = '#FEC34D';
+      }
+    }
+
+    function shiftDolls() {
+      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
+      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
+      var $counterPeople = angular.element(document.querySelector('.counter-people'));
+
+      $doll.addClass('zoomOut');
+      $activeDoll.removeClass('infinite pulse');
+      $activeDoll.addClass('doll-left');
+    }
+
+    function returnDolls() {
+      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
+      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
+      var $counterPeople = angular.element(document.querySelector('.counter-people'));
+
+      $doll.removeClass('zoomOut');
+      $activeDoll.addClass('infinite pulse');
+      $activeDoll.removeClass('doll-left');
+    }
 
   }]);

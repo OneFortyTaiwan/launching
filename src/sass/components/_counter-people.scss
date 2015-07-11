@@ -1,0 +1,57 @@
+.counter-people {
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: all .5s ease-in;
+
+  .people-wall {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    list-style: none;
+
+    .doll {
+      display: inline-block;
+      width: 1.8rem;
+      margin-right: 1rem;
+      transition: all .2s ease-in;
+
+      &.doll-active {
+        position: absolute;
+        transform: scale(1.2);
+        transition: all .2s ease-in;
+        animation-fill-mode: forward;
+      }
+
+      &.doll-normal {
+        animation-duration: 1s;
+      }
+
+      &.doll-left {
+        animation-name: dollShiftLeft;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-out;
+        animation-delay: 1s;
+        animation-fill-mode: forward;
+      }
+    }
+  }
+}
+
+#background.is-people .counter-people {
+  position: fixed;
+  top: $navbar-height;
+  z-index: 999;
+  background-color: $white;
+  opacity: 1;
+}
+
+@keyframes dollShiftLeft {
+  0% { transform: translateX(0%); }
+  20% { transform: translateX(5rem); }
+  90% { transform: translateX(-70vw); }
+
+  100% {
+    transform: translateX(0vw);
+  }
+}

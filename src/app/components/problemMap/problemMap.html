@@ -1,8 +1,8 @@
 <div ng-controller="ProblemMapCtrl as problemMapCtrl" class="map-container">
-  <h2 class="section-subtitle map-text">
+  <h2 class="section-subtitle map-text" ng-show="problemMapCtrl.mapShown">
     但在他們實踐夢想的路上，不管在台灣工作期間，或是回到家鄉準備創業，都遭遇了重重阻礙...
   </h2>
   <img src="/assets/images/map/taiwan.png" alt="從台灣出發" class="map-taiwan">
-  <img src="/assets/images/map/plane.png" alt="回家創業" class="map-plane">
+  <img src="/assets/images/map/plane.png" alt="回家創業" class="map-plane" ng-show="problemMapCtrl.mapShown">
   <img src="/assets/images/map/southeastasia.png" alt="東南亞的創業夢" class="map-southeastasia">
 </div>
