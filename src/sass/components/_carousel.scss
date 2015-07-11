@@ -13,20 +13,20 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: 0 0;
-        background-size: 300%;
+        background-size: cover;
       }
     }
 
     .page-subtitle {
+      padding-top: 20vh;
       margin-top: 0;
-      padding-top: 35vh;
     }
   }
 
   .carousel-indicator {
     position: absolute;
     bottom: 15%;
-    left: 45%;
+    left: 40%;
 
     span {
       display: inline-block;
@@ -55,8 +55,13 @@
       }
 
       .page-subtitle {
+        padding-top: 35vh;
         font-size: 28px;
       }
+    }
+
+    .carousel-indicator {
+      left: 45%;
     }
   }
 }
