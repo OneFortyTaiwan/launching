@@ -2,10 +2,15 @@
 
 angular
   .module('oneforty')
-  .controller('CounterCtrl', ['$timeout', function($timeout) {
+  .controller('CounterCtrl', ['$scope', '$timeout', function($scope, $timeout) {
     var self = this;
+    var activateDolls = activateDolls;
+    var shiftDolls = shiftDolls;
 
-    self.people = createPeopleWall(7, 30);
+    /**
+     * Varibles used in view
+     */
+    self.people = createPeopleWall(2, 30);
 
     self.countries = [
       {
@@ -48,8 +53,11 @@ angular
       }
     ];
 
-    self.isFirst = true;
+    self.isCountries = false;
 
+    /**
+     * Rendering functions used in view
+     */
     self.getAmount = function(amount) {
       var arr = [];
       var num = Math.ceil(amount / 2);
@@ -61,28 +69,27 @@ angular
       return arr;
     };
 
-    self.changeColor = function() {
-      var $elements = document.getElementsByClassName('doll-active');
-      for (var i = 0, j = $elements.length; i < j; i++) {
-        $elements[i].contentDocument.getElementById('doll-head').style.fill = '#FEC34D';
-        $elements[i].contentDocument.getElementById('doll-body').style.fill = '#FEC34D';
-      }
-    };
+    /**
+     * Event handlers when window scrolls
+     */
+    $scope.$on('activateDolls', function($evt, active, locals) {
+      if(!active) return;
+      activateDolls();
+    });
 
-    self.moveLeft = function() {
-      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
-      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
-      var $counterPeople = angular.element(document.querySelector('.counter-people'));
+    $scope.$on('shiftDolls', function($evt, active, locals) {
+      if(!active) return;
+      shiftDolls();
+    });
 
-      $doll.addClass('zoomOut');
-      $activeDoll.removeClass('infinite pulse');
-      $activeDoll.addClass('doll-left');
+    $scope.$on('showCountries', function($evt, active, locals) {
+      if(!active) return;
+      showCountries(active);
+    });
 
-      $timeout(function() {
-        self.isFirst = false;
-      }, 4000);
-    };
-
+    /**
+     * Private functions used in the controller
+     */
     function createPeopleWall(row, column) {
       var arr = [];
       var random = 0;
@@ -102,4 +109,29 @@ angular
 
       return arr;
     }
+
+    function activateDolls() {
+      var $elements = document.getElementsByClassName('doll-active');
+      for (var i = 0, j = $elements.length; i < j; i++) {
+        $elements[i].contentDocument.getElementById('doll-head').style.fill = '#FEC34D';
+        $elements[i].contentDocument.getElementById('doll-body').style.fill = '#FEC34D';
+      }
+    }
+
+    function shiftDolls() {
+      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
+      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
+      var $counterPeople = angular.element(document.querySelector('.counter-people'));
+
+      $doll.addClass('zoomOut');
+      $activeDoll.removeClass('infinite pulse');
+      $activeDoll.addClass('doll-left');
+    }
+
+    function showCountries(active) {
+      self.isCountries = active;
+      console.log(active);
+    }
+
+
   }]);

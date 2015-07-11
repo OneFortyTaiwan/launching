@@ -1,7 +1,6 @@
 .counter-countries {
   width: 100%;
   height: 100vh;
-  transition: all 1s ease-in;
 
   &.hidden {
     opacity: 0;
@@ -88,15 +87,9 @@
   }
 }
 
-.list-item.ng-enter {
-  transition: all 2s ease-in;
-  opacity: 0;
-}
-
-.list-item.ng-enter.list-item.ng-enter-active {
-  opacity: 1;
-}
-
-.list-item.ng-move {
-
+#background.is-countries .counter-countries {
+  position: fixed;
+  top: $navbar-height;
+  z-index: 999;
+  background-color: $white;
 }

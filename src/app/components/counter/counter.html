@@ -1,6 +1,6 @@
-<div ng-controller="CounterCtrl as counterCtrl">
+<div ng-controller="CounterCtrl as counterCtrl" class="background-container">
 
-  <div class="counter-people">
+  <div class="counter-people" sw-stage="people">
     <h2 class="section-title center">你知道嗎？關於東南亞移工</h2>
     <h3 class="text center">在台灣平均每40個人，就有一位移工，他們分別來自...</h3>
     <ul class="people-wall">
@@ -16,7 +16,7 @@
     </ul>
   </div>
 
-  <div class="counter-countries">
+  <div class="counter-countries" sw-stage="countries" ng-show="counterCtrl.isCountries">
     <h2 class="section-title center">他們從哪裡來？在台灣做哪些工作？</h2>
     <ul class="country-list">
       <li class="list-item clearfix animated"

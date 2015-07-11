@@ -2,7 +2,12 @@
   <div ng-include="'app/components/navbar/navbar.html'"></div>
 </header>
 
-<div class="main-container">
+<div class="main-container"
+     scroll-watch="{from: 0, to: -1}"
+     sw-broadcast="{
+       countriesShow: '$percentage > 50'
+     }"
+     ng-class="mainCtrl.currentSection">
   <div ng-include="'app/components/carousel/carousel.html'"></div>
 
   <description section-id="about-us" image-back="false" title="One-Forty是什麼？">
@@ -12,7 +17,18 @@
     並籌劃各種街頭活動與組織串連，減低台灣人與東南亞移工的隔閡，讓雙方從接觸開始，進而有機會了解、包容與同理。
   </description>
 
-  <section id="background">
+  <section id="background"
+           sw-stage="background"
+           scroll-watch="{from: 0, to: -1}"
+           sw-broadcast="{
+             activateDolls: '$positive >= $stageTop + 50',
+             shiftDolls: '$positive >= $stageTop + 100',
+             showCountries: '$positive >= ($stageTop + $height / 2)'
+           }"
+           sw-class="{
+             'is-people': $positive >= $stageTop - 45 && $positive < ($stageTop + $height / 2),
+             'is-countries': $positive >= ($stageTop + $height / 2) && ($positive < $stageTop + $height)
+           }">
     <div ng-include="'app/components/counter/counter.html'"></div>
   </section>
 
