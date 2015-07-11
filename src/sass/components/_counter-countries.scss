@@ -9,20 +9,25 @@
    */
   .country-list {
     float: left;
-    width: 66%;
+    width: 100%;
     margin-top: 3rem;
+    padding-left: 0;
     list-style: none;
 
     .list-item {
+      float: left;
+      width: 50%;
       margin: 1rem 0;
+      text-align: center;
 
       .item-img-container {
         display: block;
         float: left;
-        margin-right: 3rem;
+
+        &.ng-hide-remove { animation: bounceIn 1s both; }
 
         .item-img {
-
+          width: 80%;
         }
 
         .img-name {
@@ -37,19 +42,20 @@
         float: left;
 
         .doll {
-          display: inline-block;
-          width: 2.5rem;
-          margin-right: 1rem;
+          display: none;
+
+          &.ng-hide-remove { animation: fadeInLeftBig .5s both; }
         }
 
         .num {
           display: inline-block;
-          margin-left: 1rem;
-          font-size: 2rem;
+          font-size: 1.8rem;
           vertical-align: -115%;
           color: $text-color;
 
-          strong { font-size: 3em; }
+          strong { font-size: 2.5em; }
+
+          &.ng-hide-remove { animation: zoomIn 1s both; }
         }
       }
     }
@@ -59,28 +65,27 @@
    * Job-list layout
    */
   .job-list {
-    position: relative;
     float: left;
-    width: 33%;
+    width: 100%;
     height: 80vh;
+    margin-top: 3rem;
 
     .job-img-container {
-      position: absolute;
       display: block;
+      float: left;
       text-align: center;
 
-      .job-img {
 
+      &.ng-hide-remove { animation: rubberBand 1s both; }
+
+      .job-img {
+        width: 80%;
       }
 
       .img-name {
         line-height: 2.5;
         font-size: 1.8rem;
       }
-
-      &.job-factory { top: 5%; right: 10%; }
-      &.job-maid { top: 30%; left: 0; }
-      &.job-fisher { bottom: 10%; right: 10%; }
     }
   }
 }
@@ -93,22 +98,70 @@
   opacity: 1;
 }
 
+@media (min-width: $screen-sm-min) {
+  .counter-countries {
+    .country-list {
+      width: 66%;
+      padding-left: 4rem;
 
-/* The finishing CSS styles for the enter animation */
-.country-list {
-  .item-img-container.ng-hide-remove {
-    animation: bounceIn 1s both;
+      .list-item {
+        float: none;
+        width: auto;
+
+        .item-img-container {
+          margin-right: 3rem;
+
+          .item-img {
+            width: auto;
+          }
+
+          .img-name {
+            line-height: 2;
+            font-size: 1.8rem;
+            text-align: center;
+          }
+        }
+
+        .item-content {
+
+          .doll {
+            display: inline-block;
+            width: 2.5rem;
+            margin-right: 1rem;
+          }
+
+          .num {
+            margin-left: 1rem;
+            font-size: 2rem;
+
+            strong { font-size: 3em; }
+          }
+        }
+      }
+    }
+
+    .job-list {
+      position: relative;
+      width: 33%;
+      margin-top: 0;
+
+      .job-img-container {
+        position: absolute;
+        float: none;
+
+        .job-img {
+          width: auto;
+        }
+
+        .img-name {
+          line-height: 2.5;
+          font-size: 1.8rem;
+        }
+
+        &.job-factory { top: 5%; right: 10%; }
+        &.job-maid { top: 30%; left: 0; }
+        &.job-fisher { bottom: 10%; right: 10%; }
+      }
+    }
   }
-
-  .doll.ng-hide-remove {
-    animation: slideOutRight 1s both;
-  }
-
-  .num.ng-hide-remove {
-    animation: zoomIn 1s both;
-  }
-}
-
-.job-img-container.ng-hide-remove {
-  animation: rubberBand 1s both;
 }

@@ -21,19 +21,19 @@
            sw-stage="background"
            scroll-watch="{from: 0, to: -1}"
            sw-broadcast="{
-             isPeople: '$positive >= $stageTop - 45 && $positive < ($stageTop + $height / 20 * 6)',
-             activateDolls: '$positive >= ($stageTop + $height / 20 * 1)',
-             hideDolls: '$positive >= ($stageTop + $height / 20 * 2)',
-             shiftDolls: '$positive >= ($stageTop + $height / 20 * 3)',
-             isCountries: '$positive >= ($stageTop + $height / 20 * 5) && ($positive < $stageTop + $height / 2)',
-             showCountryDolls: '$positive >= ($stageTop + $height / 20 * 6)',
-             showFlags: '$positive >= ($stageTop + $height / 20 * 7)',
-             showAmount: '$positive >= ($stageTop + $height / 20 * 8)',
-             showJobs: '$positive >= ($stageTop + $height / 20 * 9)'
+             isPeople: '$positive >= ($stageTop - 45) && $positive < ($stageTop - 45 + $height / 2)',
+             isCountries: '$positive >= ($stageTop - 45 + $height / 2) && ($positive < $stageTop - 45 + $height / 20 * 19)',
+             activateDolls: '$positive >= ($stageTop + $height / 20 * 2)',
+             hideDolls: '$positive >= ($stageTop + $height / 20 * 4)',
+             shiftDolls: '$positive >= ($stageTop + $height / 20 * 7)',
+             showFlags: '$positive >= ($stageTop + $height / 20 * 10)',
+             showCountryDolls: '$positive >= ($stageTop + $height / 20 * 12)',
+             showAmount: '$positive >= ($stageTop + $height / 20 * 14)',
+             showJobs: '$positive >= ($stageTop + $height / 20 * 16)'
            }"
            sw-class="{
-             'is-people': $positive >= $stageTop - 45 && $positive < ($stageTop + $height / 20 * 5) && $positive > 0,
-             'is-countries': $positive >= ($stageTop + $height / 20 * 5) && ($positive < $stageTop + $height / 2)
+             'is-people': $positive >= ($stageTop - 45) && $positive < ($stageTop -45 + $height / 2) && $positive > 0,
+             'is-countries': $positive >= ($stageTop - 45 + $height / 2) && $positive < ($stageTop - 45 + $height / 20 * 19)
            }">
     <div ng-include="'app/components/counter/counter.html'"></div>
   </section>
@@ -46,7 +46,7 @@
     並能留在家鄉與家人長聚，不用讓自已與兄弟姊妹再次飄流他鄉
   </description>
 
-  <section id="problem-map"
+  <!-- <section id="problem-map"
            sw-stage="problem-map"
            scroll-watch="{from: 0, to: -1}"
            sw-broadcast="{
@@ -69,7 +69,7 @@
              'is-dialog': $positive >= $stageTop - 45 && $positive < ($stageTop + $height -45)
            }">
     <div ng-include="'app/components/problemDialog/problemDialog.html'"></div>
-  </section>
+  </section> -->
 
   <description section-id="solution-title" image-back="true" title="於是，ONE-FORTY發起3項計畫">
   </description>
