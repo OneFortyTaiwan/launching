@@ -2,8 +2,9 @@
 
 angular
   .module('oneforty')
-  .controller('MainCtrl', [function () {
+  .controller('MainCtrl', ['$scope', function ($scope) {
     var self = this;
+
 
 
   }]);

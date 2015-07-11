@@ -1,0 +1,114 @@
+.counter-countries {
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: all .5s ease-in;
+
+  /**
+   * Country-list layout
+   */
+  .country-list {
+    float: left;
+    width: 66%;
+    margin-top: 3rem;
+    list-style: none;
+
+    .list-item {
+      margin: 1rem 0;
+
+      .item-img-container {
+        display: block;
+        float: left;
+        margin-right: 3rem;
+
+        .item-img {
+
+        }
+
+        .img-name {
+          line-height: 2;
+          font-size: 1.8rem;
+          text-align: center;
+        }
+      }
+
+      .item-content {
+        display: block;
+        float: left;
+
+        .doll {
+          display: inline-block;
+          width: 2.5rem;
+          margin-right: 1rem;
+        }
+
+        .num {
+          display: inline-block;
+          margin-left: 1rem;
+          font-size: 2rem;
+          vertical-align: -115%;
+          color: $text-color;
+
+          strong { font-size: 3em; }
+        }
+      }
+    }
+  }
+
+  /**
+   * Job-list layout
+   */
+  .job-list {
+    position: relative;
+    float: left;
+    width: 33%;
+    height: 80vh;
+
+    .job-img-container {
+      position: absolute;
+      display: block;
+      text-align: center;
+
+      .job-img {
+
+      }
+
+      .img-name {
+        line-height: 2.5;
+        font-size: 1.8rem;
+      }
+
+      &.job-factory { top: 5%; right: 10%; }
+      &.job-maid { top: 30%; left: 0; }
+      &.job-fisher { bottom: 10%; right: 10%; }
+    }
+  }
+}
+
+#background.is-countries .counter-countries {
+  position: fixed;
+  top: $navbar-height;
+  z-index: 999;
+  background-color: $white;
+  opacity: 1;
+}
+
+
+/* The finishing CSS styles for the enter animation */
+.country-list {
+  .item-img-container.ng-hide-remove {
+    animation: bounceIn 1s both;
+  }
+
+  .doll.ng-hide-remove {
+    animation: slideOutRight 1s both;
+  }
+
+  .num.ng-hide-remove {
+    animation: zoomIn 1s both;
+  }
+}
+
+.job-img-container.ng-hide-remove {
+  animation: rubberBand 1s both;
+}
