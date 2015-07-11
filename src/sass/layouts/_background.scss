@@ -1,5 +1,13 @@
 #background {
-  position: relative;
-  min-height: 100vh;
   padding: $section-padding-top $section-padding-side;
+}
+
+.counter-people {
+  &.ng-hide-add { animation: fadeOutLeft 1s both; }
+  &.ng-hide-remove { animation: fadeInRight 1s 300ms both; }
+}
+
+.counter-countries {
+  &.ng-hide-add { animation: fadeOutLeft 1s both; }
+  &.ng-hide-remove { animation: fadeInRight 1s 300ms both; }
 }
