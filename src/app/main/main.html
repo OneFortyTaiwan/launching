@@ -8,7 +8,7 @@
        countriesShow: '$percentage > 50'
      }"
      ng-class="mainCtrl.currentSection">
-  <div ng-include="'app/components/carousel/carousel.html'"></div>
+  <!-- <div ng-include="'app/components/carousel/carousel.html'"></div> -->
 
   <description section-id="about-us" image-back="false" title="One-Forty是什麼？">
     One-Forty 是一個在台灣關注東南亞移工 (外籍勞工) 的非營利組織。<br>
@@ -45,10 +45,26 @@
     並能留在家鄉與家人長聚，不用讓自已與兄弟姊妹再次飄流他鄉
   </description>
 
-  <section id="problem-map">
+  <section id="problem-map"
+           sw-stage="problem-map"
+           scroll-watch="{from: 0, to: -1}"
+           sw-broadcast="{
+            mapStart: '$positive >= $stageTop - 45 && $positive < ($stageTop + $height)',
+            mapEnd: '$positive >= $stageTop - 45 + $height'
+           }"
+           >
     <div ng-include="'app/components/problemMap/problemMap.html'">
   </section>
-  <section id="problem-dialog">
+  <section id="problem-dialog"
+           sw-stage="problem-dialog"
+           scroll-watch="{from: 0, to: -1}"
+           sw-broadcast="{
+            dialogStart: '$positive >= $stageTop - 45 && $positive < ($stageTop + $height)',
+            dialogEnd: '$positive >= $stageTop -45 + $height'
+           }"
+           sw-class="{
+             'is-dialog': $positive >= $stageTop - 45 && $positive < ($stageTop + $height -45)
+           }">
     <div ng-include="'app/components/problemDialog/problemDialog.html'"></div>
   </section>
 

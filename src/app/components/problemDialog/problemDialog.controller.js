@@ -2,7 +2,7 @@
 
 angular
   .module('oneforty')
-  .controller('ProblemDialogCtrl', [function () {
+  .controller('ProblemDialogCtrl', ['$scope', function ($scope) {
     var self = this;
 
     self.problems = [
@@ -27,4 +27,17 @@ angular
         text: '我害怕與別人分享我的夢想，也害怕失敗不敢嘗試，在台灣的日常工作總是聽人使喚，很懷疑自己有能力改變未來。'
       }
     ];
+
+    self.problemsShown = false;
+
+
+    $scope.$on('dialogStart', function($evt, active, locals) {
+      if(!active) return;
+      self.problemsShown = active;
+    });
+
+    $scope.$on('dialogEnd', function($evt, active, locals) {
+      if(!active) return;
+      self.problemsShown = !active;
+    });
 }]);
