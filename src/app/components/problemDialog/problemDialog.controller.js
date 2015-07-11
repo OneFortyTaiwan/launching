@@ -30,7 +30,6 @@ angular
 
     self.problemsShown = false;
 
-
     $scope.$on('dialogStart', function($evt, active, locals) {
       if(!active) return;
       self.problemsShown = active;

@@ -50,9 +50,11 @@
            scroll-watch="{from: 0, to: -1}"
            sw-broadcast="{
             mapStart: '$positive >= $stageTop - 45 && $positive < ($stageTop + $height)',
-            mapEnd: '$positive >= $stageTop - 45 + $height'
+            mapEnd: '$positive >= $stageTop -45 + $height'
            }"
-           >
+           sw-class="{
+             'is-map': $positive >= $stageTop - 45 && $positive < ($stageTop + $height -45)
+           }">
     <div ng-include="'app/components/problemMap/problemMap.html'">
   </section>
   <section id="problem-dialog"
