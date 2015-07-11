@@ -46,7 +46,7 @@
     並能留在家鄉與家人長聚，不用讓自已與兄弟姊妹再次飄流他鄉
   </description>
 
-  <!-- <section id="problem-map"
+  <section id="problem-map"
            sw-stage="problem-map"
            scroll-watch="{from: 0, to: -1}"
            sw-broadcast="{
@@ -56,8 +56,9 @@
            sw-class="{
              'is-map': $positive >= $stageTop - 45 && $positive < ($stageTop + $height -45)
            }">
-    <div ng-include="'app/components/problemMap/problemMap.html'">
+    <div ng-include="'app/components/problemMap/problemMap.html'"></div>
   </section>
+
   <section id="problem-dialog"
            sw-stage="problem-dialog"
            scroll-watch="{from: 0, to: -1}"
@@ -69,7 +70,7 @@
              'is-dialog': $positive >= $stageTop - 45 && $positive < ($stageTop + $height -45)
            }">
     <div ng-include="'app/components/problemDialog/problemDialog.html'"></div>
-  </section> -->
+  </section>
 
   <description section-id="solution-title" image-back="true" title="於是，ONE-FORTY發起3項計畫">
   </description>
