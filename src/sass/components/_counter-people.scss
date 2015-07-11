@@ -6,8 +6,9 @@
 
   .people-wall {
     position: relative;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    padding-left: 2vw;
     list-style: none;
 
     .wall-row {
@@ -62,6 +63,7 @@
   .counter-people {
 
     .people-wall {
+      text-align: center;
 
       .wall-row {
         margin: auto;

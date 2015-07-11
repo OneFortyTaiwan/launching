@@ -14,20 +14,25 @@
     padding-left: 0;
     list-style: none;
 
+    // DEBUG: for mobile scrolling issue
+    &.job-shown {
+      display: none;
+    }
+
     .list-item {
       float: left;
       width: 50%;
       margin: 1rem 0;
       text-align: center;
 
+
       .item-img-container {
         display: block;
-        float: left;
 
         &.ng-hide-remove { animation: bounceIn 1s both; }
 
         .item-img {
-          width: 80%;
+          width: 50%;
         }
 
         .img-name {
@@ -39,7 +44,6 @@
 
       .item-content {
         display: block;
-        float: left;
 
         .doll {
           display: none;
@@ -65,10 +69,9 @@
    * Job-list layout
    */
   .job-list {
-    float: left;
-    width: 100%;
+    width: 90%;
     height: 80vh;
-    margin-top: 3rem;
+    margin: 3rem auto 0;
 
     .job-img-container {
       display: block;
@@ -104,11 +107,17 @@
       width: 66%;
       padding-left: 4rem;
 
+      &.job-shown {
+        display: block;
+      }
+
       .list-item {
         float: none;
         width: auto;
+        text-align: left;
 
         .item-img-container {
+          float: left;
           margin-right: 3rem;
 
           .item-img {
@@ -142,6 +151,7 @@
 
     .job-list {
       position: relative;
+      float: left;
       width: 33%;
       margin-top: 0;
 

@@ -22,7 +22,7 @@
 
   <div class="counter-countries" sw-stage="countries">
     <h2 class="section-title center">他們從哪裡來？在台灣做哪些工作？</h2>
-    <ul class="country-list">
+    <ul class="country-list" ng-class="{'job-shown': counterCtrl.elementState.jobs}">
       <li class="list-item clearfix"
           ng-repeat="country in counterCtrl.countries">
         <figure class="item-img-container" ng-show="counterCtrl.elementState.flags">

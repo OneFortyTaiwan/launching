@@ -21,7 +21,7 @@ angular
       },
       {
         name: '計畫緣起',
-        link: 'problems',
+        link: 'problem-dialog',
         isActive: false
       },
       {
