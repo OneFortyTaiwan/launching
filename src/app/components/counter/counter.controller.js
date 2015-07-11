@@ -10,7 +10,7 @@ angular
     /**
      * Varibles used in view
      */
-    self.people = createPeopleWall(7, 30);
+    self.people = createPeopleWall(3, 30);
 
     self.countries = [
       {

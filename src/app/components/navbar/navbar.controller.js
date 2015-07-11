@@ -56,5 +56,7 @@ angular
 
       self.currentSection = angular.element(document.getElementById(section));
       $document.scrollToElementAnimated(self.currentSection);
+
+      $scope.navCollapsed = true;
     };
   }]);

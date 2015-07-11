@@ -8,7 +8,7 @@
        countriesShow: '$percentage > 50'
      }"
      ng-class="mainCtrl.currentSection">
-  <!-- <div ng-include="'app/components/carousel/carousel.html'"></div> -->
+  <section id="home" ng-include="'app/components/carousel/carousel.html'"></section>
 
   <description section-id="about-us" image-back="false" title="One-Forty是什麼？">
     One-Forty 是一個在台灣關注東南亞移工 (外籍勞工) 的非營利組織。<br>
@@ -31,7 +31,7 @@
              showJobs: '$positive >= ($stageTop + $height / 20 * 9)'
            }"
            sw-class="{
-             'is-people': $positive >= $stageTop - 45 && $positive < ($stageTop + $height / 20 * 5),
+             'is-people': $positive >= $stageTop - 45 && $positive < ($stageTop + $height / 20 * 5) && $positive > 0,
              'is-countries': $positive >= ($stageTop + $height / 20 * 5) && ($positive < $stageTop + $height / 2)
            }">
     <div ng-include="'app/components/counter/counter.html'"></div>
