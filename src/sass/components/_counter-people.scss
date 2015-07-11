@@ -12,19 +12,34 @@
 
     .doll {
       display: inline-block;
-      width: 1.8rem;
+      width: 2rem;
+      height: 6rem;
       margin-right: 1rem;
+      color: transparent;
+      background-image: url('/assets/images/dolls/doll.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
       transition: all .2s ease-in;
 
       &.doll-active {
         position: absolute;
-        transform: scale(1.2);
-        transition: all .2s ease-in;
-        animation-fill-mode: forward;
+
+
+        &.activated {
+          background-image: url('/assets/images/dolls/doll-active.svg');
+          animation: pulse 1s infinite both;
+        }
+
+        &.shifted {
+          animation: bounceOutLeft 1s both;
+        }
       }
 
       &.doll-normal {
-        animation-duration: 1s;
+
+        &.bye {
+          animation: zoomOut 1s both;
+        }
       }
 
       &.doll-left {

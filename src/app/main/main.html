@@ -23,7 +23,8 @@
            sw-broadcast="{
              isPeople: '$positive >= $stageTop - 45 && $positive < ($stageTop + $height / 20 * 6)',
              activateDolls: '$positive >= ($stageTop + $height / 20 * 1)',
-             shiftDolls: '$positive >= ($stageTop + $height / 20 * 2)',
+             hideDolls: '$positive >= ($stageTop + $height / 20 * 2)',
+             shiftDolls: '$positive >= ($stageTop + $height / 20 * 3)',
              isCountries: '$positive >= ($stageTop + $height / 20 * 5) && ($positive < $stageTop + $height / 2)',
              showCountryDolls: '$positive >= ($stageTop + $height / 20 * 6)',
              showFlags: '$positive >= ($stageTop + $height / 20 * 7)',
