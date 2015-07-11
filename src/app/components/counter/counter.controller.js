@@ -10,7 +10,7 @@ angular
     /**
      * Varibles used in view
      */
-    self.people = createPeopleWall(2, 30);
+    self.people = createPeopleWall(7, 30);
 
     self.countries = [
       {
@@ -53,7 +53,13 @@ angular
       }
     ];
 
-    self.isCountries = false;
+    self.currentStage = '';
+    self.elementState = {
+      flags: false,
+      countryDolls: false,
+      amount: false,
+      jobs: false
+    };
 
     /**
      * Rendering functions used in view
@@ -72,6 +78,16 @@ angular
     /**
      * Event handlers when window scrolls
      */
+    $scope.$on('isPeople', function($evt, active, locals) {
+      if(!active) return;
+      self.currentStage = 'people';
+    });
+
+    $scope.$on('isCountries', function($evt, active, locals) {
+      if(!active) return;
+      self.currentStage = 'countries';
+    });
+
     $scope.$on('activateDolls', function($evt, active, locals) {
       if(!active) return;
       activateDolls();
@@ -82,9 +98,24 @@ angular
       shiftDolls();
     });
 
-    $scope.$on('showCountries', function($evt, active, locals) {
+    $scope.$on('showCountryDolls', function($evt, active, locals) {
       if(!active) return;
-      showCountries(active);
+      self.elementState.countryDolls = active;
+    });
+
+    $scope.$on('showFlags', function($evt, active, locals) {
+      if(!active) return;
+      self.elementState.flags = active;
+    });
+
+    $scope.$on('showAmount', function($evt, active, locals) {
+      if(!active) return;
+      self.elementState.amount = active;
+    });
+
+    $scope.$on('showJobs', function($evt, active, locals) {
+      if(!active) return;
+      self.elementState.jobs = active;
     });
 
     /**
@@ -128,10 +159,14 @@ angular
       $activeDoll.addClass('doll-left');
     }
 
-    function showCountries(active) {
-      self.isCountries = active;
-      console.log(active);
-    }
+    function returnDolls() {
+      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
+      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
+      var $counterPeople = angular.element(document.querySelector('.counter-people'));
 
+      $doll.removeClass('zoomOut');
+      $activeDoll.addClass('infinite pulse');
+      $activeDoll.removeClass('doll-left');
+    }
 
   }]);

@@ -21,13 +21,18 @@
            sw-stage="background"
            scroll-watch="{from: 0, to: -1}"
            sw-broadcast="{
-             activateDolls: '$positive >= $stageTop + 50',
-             shiftDolls: '$positive >= $stageTop + 100',
-             showCountries: '$positive >= ($stageTop + $height / 2)'
+             isPeople: '$positive >= $stageTop - 45 && $positive < ($stageTop + $height / 20 * 6)',
+             activateDolls: '$positive >= ($stageTop + $height / 20 * 1)',
+             shiftDolls: '$positive >= ($stageTop + $height / 20 * 2)',
+             isCountries: '$positive >= ($stageTop + $height / 20 * 5) && ($positive < $stageTop + $height / 2)',
+             showCountryDolls: '$positive >= ($stageTop + $height / 20 * 6)',
+             showFlags: '$positive >= ($stageTop + $height / 20 * 7)',
+             showAmount: '$positive >= ($stageTop + $height / 20 * 8)',
+             showJobs: '$positive >= ($stageTop + $height / 20 * 9)'
            }"
            sw-class="{
-             'is-people': $positive >= $stageTop - 45 && $positive < ($stageTop + $height / 2),
-             'is-countries': $positive >= ($stageTop + $height / 2) && ($positive < $stageTop + $height)
+             'is-people': $positive >= $stageTop - 45 && $positive < ($stageTop + $height / 20 * 5),
+             'is-countries': $positive >= ($stageTop + $height / 20 * 5) && ($positive < $stageTop + $height / 2)
            }">
     <div ng-include="'app/components/counter/counter.html'"></div>
   </section>

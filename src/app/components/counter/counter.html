@@ -11,17 +11,17 @@
                   alt="台灣居民"
                   ng-repeat="val in row track by $index"
                   ng-class="{'doll-active': val, 'doll-normal': !val, pulse: val, infinite: val}"
-                  class="doll animated"></object>
+                  class="doll animated rubberband"></object>
       </li>
     </ul>
   </div>
 
-  <div class="counter-countries" sw-stage="countries" ng-show="counterCtrl.isCountries">
+  <div class="counter-countries" sw-stage="countries">
     <h2 class="section-title center">他們從哪裡來？在台灣做哪些工作？</h2>
     <ul class="country-list">
-      <li class="list-item clearfix animated"
+      <li class="list-item clearfix"
           ng-repeat="country in counterCtrl.countries">
-        <figure class="item-img-container">
+        <figure class="item-img-container" ng-show="counterCtrl.elementState.flags">
           <img src="{{country.img}}" alt="{{country.name}}" class="item-img">
           <figcaption class="img-name">{{country.name}}</figcaption>
         </figure>
@@ -29,14 +29,15 @@
           <img src="/assets/images/dolls/doll.svg"
                alt="{{country.name + ':' + country.amount + '萬人'}}"
                ng-repeat="i in counterCtrl.getAmount(country.amount)"
+               ng-show="counterCtrl.elementState.countryDolls"
                class="doll">
-          <span class="num"><strong>{{country.amount}}</strong> 萬人</span>
+          <span class="num" ng-show="counterCtrl.elementState.amount"><strong>{{country.amount}}</strong> 萬人</span>
         </div>
       </li>
     </ul>
     <div class="job-list">
       <figure ng-repeat="job in counterCtrl.jobs"
-              class="job-img-container job-{{job.slug}}">
+              class="job-img-container job-{{job.slug}}" ng-show="counterCtrl.elementState.jobs">
         <img src="{{job.img}}" alt="{{job.name}}" class="job-img">
         <figcaption class="img-name">{{job.name}}</figcaption>
       </figure>

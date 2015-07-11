@@ -1,11 +1,8 @@
 .counter-people {
   width: 100%;
   height: 100vh;
-  // transition: all 1s ease-in;
-
-  &.hidden {
-    opacity: 0;
-  }
+  opacity: 0;
+  transition: all .5s ease-in;
 
   .people-wall {
     position: relative;
@@ -21,6 +18,9 @@
 
       &.doll-active {
         position: absolute;
+        transform: scale(1.2);
+        transition: all .2s ease-in;
+        animation-fill-mode: forward;
       }
 
       &.doll-normal {
@@ -43,6 +43,7 @@
   top: $navbar-height;
   z-index: 999;
   background-color: $white;
+  opacity: 1;
 }
 
 @keyframes dollShiftLeft {
@@ -50,13 +51,7 @@
   20% { transform: translateX(5rem); }
   90% { transform: translateX(-70vw); }
 
-  95% {
-    left: 0;
-    transform: translateX(-100%);
-  }
-
   100% {
-    left: 0;
-    transform: translateX(0%);
+    transform: translateX(0vw);
   }
 }
