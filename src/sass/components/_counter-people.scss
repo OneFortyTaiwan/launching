@@ -6,33 +6,45 @@
 
   .people-wall {
     position: relative;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    padding-left: 2vw;
     list-style: none;
+
+    .wall-row {
+      margin: .5rem 0;
+    }
 
     .doll {
       display: inline-block;
-      width: 1.8rem;
+      width: .9rem;
+      height: 3rem;
       margin-right: 1rem;
+      color: transparent;
+      background-image: url('/assets/images/dolls/doll.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
       transition: all .2s ease-in;
 
       &.doll-active {
         position: absolute;
-        transform: scale(1.2);
-        transition: all .2s ease-in;
-        animation-fill-mode: forward;
+
+
+        &.activated {
+          background-image: url('/assets/images/dolls/doll-active.svg');
+          animation: pulse 1s infinite both;
+        }
+
+        &.shifted {
+          animation: bounceOutLeft 1s both;
+        }
       }
 
       &.doll-normal {
-        animation-duration: 1s;
-      }
 
-      &.doll-left {
-        animation-name: dollShiftLeft;
-        animation-duration: 1.5s;
-        animation-timing-function: ease-out;
-        animation-delay: 1s;
-        animation-fill-mode: forward;
+        &.bye {
+          animation: zoomOut 1s both;
+        }
       }
     }
   }
@@ -46,12 +58,22 @@
   opacity: 1;
 }
 
-@keyframes dollShiftLeft {
-  0% { transform: translateX(0%); }
-  20% { transform: translateX(5rem); }
-  90% { transform: translateX(-70vw); }
 
-  100% {
-    transform: translateX(0vw);
+@media (min-width: $screen-sm-min) {
+  .counter-people {
+
+    .people-wall {
+      text-align: center;
+
+      .wall-row {
+        margin: auto;
+      }
+
+      .doll {
+        width: 2rem;
+        height: 6rem;
+        margin-right: 1rem;
+      }
+    }
   }
 }

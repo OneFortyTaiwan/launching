@@ -6,19 +6,23 @@
     <ul class="people-wall">
       <li class="wall-row"
           ng-repeat="row in counterCtrl.people">
-          <object type="image/svg+xml"
-                  data="/assets/images/dolls/doll.svg"
-                  alt="台灣居民"
-                  ng-repeat="val in row track by $index"
-                  ng-class="{'doll-active': val, 'doll-normal': !val, pulse: val, infinite: val}"
-                  class="doll animated rubberband"></object>
+        <span ng-repeat="val in row track by $index"
+              ng-class="{
+                'doll-active': val,
+                'doll-normal': !val,
+                'activated': val && counterCtrl.dollState.daActivate,
+                'bye': !val && counterCtrl.dollState.dnOut,
+                'shifted': val && counterCtrl.dollState.daShift
+              }"
+              class="doll">
+        </span>
       </li>
     </ul>
   </div>
 
   <div class="counter-countries" sw-stage="countries">
     <h2 class="section-title center">他們從哪裡來？在台灣做哪些工作？</h2>
-    <ul class="country-list">
+    <ul class="country-list" ng-class="{'job-shown': counterCtrl.elementState.jobs}">
       <li class="list-item clearfix"
           ng-repeat="country in counterCtrl.countries">
         <figure class="item-img-container" ng-show="counterCtrl.elementState.flags">
