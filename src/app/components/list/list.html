@@ -4,7 +4,7 @@
       <ul class="list-container">
         <li class="list-item clearfix" ng-repeat="solution in listCtrl.solutions">
           <div class="image-container">
-            <img src="{{solution.img}}" alt="{{solution.title}}" class="item-img">
+            <img ng-src="{{solution.img}}" alt="{{solution.title}}" class="item-img">
           </div>
           <div class="item-content">
             <h3 class="item-title section-subtitle with-ground">

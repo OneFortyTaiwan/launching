@@ -26,7 +26,7 @@
       <li class="list-item clearfix"
           ng-repeat="country in counterCtrl.countries">
         <figure class="item-img-container" ng-show="counterCtrl.elementState.flags">
-          <img src="{{country.img}}" alt="{{country.name}}" class="item-img">
+          <img ng-src="{{country.img}}" alt="{{country.name}}" class="item-img">
           <figcaption class="img-name">{{country.name}}</figcaption>
         </figure>
         <div class="item-content">
@@ -42,7 +42,7 @@
     <div class="job-list">
       <figure ng-repeat="job in counterCtrl.jobs"
               class="job-img-container job-{{job.slug}}" ng-show="counterCtrl.elementState.jobs">
-        <img src="{{job.img}}" alt="{{job.name}}" class="job-img">
+        <img ng-src="{{job.img}}" alt="{{job.name}}" class="job-img">
         <figcaption class="img-name">{{job.name}}</figcaption>
       </figure>
     </div>
