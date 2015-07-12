@@ -3,15 +3,15 @@
   height: 120vh;
 
   .map-container {
-    width: 100%;
     position: relative;
+    width: 100%;
     height: 100vh;
-    animation: fadeOutRight .5s both;
+    animation: fadeOut .5s both;
 
     .map-text {
       position: absolute;
       left: 10%;
-      bottom: 0%;
+      bottom: 15%;
       display: block;
       width: 80%;
       color: $text-color;
@@ -50,7 +50,7 @@
   z-index: 999;
   background-color: $white;
   opacity: 1;
-  animation: fadeInLeft .5s both;
+  animation: fadeIn .5s both;
 }
 
 @media (min-width: $screen-sm-min) {
@@ -60,7 +60,6 @@
       height: 100vh;
 
       .map-text {
-        position: absolute;
         left: 25%;
         bottom: 25%;
         width: 43rem;

@@ -2,15 +2,13 @@
 
 angular
   .module('oneforty')
-  .controller('CounterCtrl', ['$scope', '$timeout', function($scope, $timeout) {
+  .controller('CounterCtrl', ['$scope', function($scope) {
     var self = this;
-    var activateDolls = activateDolls;
-    var shiftDolls = shiftDolls;
 
     /**
      * Varibles used in view
      */
-    self.people = createPeopleWall(3, 30);
+    self.people = createPeopleWall(7, 30);
 
     self.countries = [
       {
@@ -54,6 +52,13 @@ angular
     ];
 
     self.currentStage = '';
+
+    self.dollState = {
+      daActivate: false,
+      dnOut: false,
+      daShift: false
+    };
+
     self.elementState = {
       flags: false,
       countryDolls: false,
@@ -81,6 +86,8 @@ angular
     $scope.$on('isPeople', function($evt, active, locals) {
       if(!active) return;
       self.currentStage = 'people';
+      resumeDolls();
+      resumeElements();
     });
 
     $scope.$on('isCountries', function($evt, active, locals) {
@@ -91,6 +98,11 @@ angular
     $scope.$on('activateDolls', function($evt, active, locals) {
       if(!active) return;
       activateDolls();
+    });
+
+    $scope.$on('hideDolls', function($evt, active, locals) {
+      if(!active) return;
+      hideDolls();
     });
 
     $scope.$on('shiftDolls', function($evt, active, locals) {
@@ -142,31 +154,27 @@ angular
     }
 
     function activateDolls() {
-      var $elements = document.getElementsByClassName('doll-active');
-      for (var i = 0, j = $elements.length; i < j; i++) {
-        $elements[i].contentDocument.getElementById('doll-head').style.fill = '#FEC34D';
-        $elements[i].contentDocument.getElementById('doll-body').style.fill = '#FEC34D';
-      }
+      self.dollState.daActivate = true;
+    }
+
+    function hideDolls() {
+      self.dollState.dnOut = true;
     }
 
     function shiftDolls() {
-      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
-      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
-      var $counterPeople = angular.element(document.querySelector('.counter-people'));
-
-      $doll.addClass('zoomOut');
-      $activeDoll.removeClass('infinite pulse');
-      $activeDoll.addClass('doll-left');
+      self.dollState.daShift = true;
     }
 
-    function returnDolls() {
-      var $doll = angular.element(document.querySelectorAll('.doll-normal'));
-      var $activeDoll = angular.element(document.querySelectorAll('.doll-active'));
-      var $counterPeople = angular.element(document.querySelector('.counter-people'));
+    function resumeDolls() {
+      for (var key in self.dollState) {
+        self.dollState[key] = false;
+      }
+    }
 
-      $doll.removeClass('zoomOut');
-      $activeDoll.addClass('infinite pulse');
-      $activeDoll.removeClass('doll-left');
+    function resumeElements() {
+      for (var key in self.elementState) {
+        self.elementState[key] = false;
+      }
     }
 
   }]);

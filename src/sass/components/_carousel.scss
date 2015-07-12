@@ -10,23 +10,36 @@
 
       .slide-image {
         height: 100%;
+        background-color: $brand-primary;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: 0 0;
-        background-size: 300%;
+        background-size: 400%;
       }
     }
 
     .page-subtitle {
+      padding-top: 20vh;
       margin-top: 0;
-      padding-top: 35vh;
+    }
+
+    .slide-1 .slide-image {
+      background-position: 0 0;
+    }
+
+    .slide-2 .slide-image {
+      background-position: 70% 0;
+    }
+
+    .slide-3 .slide-image {
+      background-position: 50% 0;
     }
   }
 
   .carousel-indicator {
     position: absolute;
     bottom: 15%;
-    left: 45%;
+    left: 40%;
 
     span {
       display: inline-block;
@@ -55,8 +68,19 @@
       }
 
       .page-subtitle {
+        padding-top: 35vh;
         font-size: 28px;
       }
+
+      .slide-1 .slide-image,
+      .slide-2 .slide-image,
+      .slide-3 .slide-image {
+        background-position: 0 0;
+      }
+    }
+
+    .carousel-indicator {
+      left: 45%;
     }
   }
 }

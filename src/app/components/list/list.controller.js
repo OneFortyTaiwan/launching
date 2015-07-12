@@ -21,9 +21,9 @@ angular
         img: '/assets/images/solutions/business-school.png'
       },
       {
-        title: '社會設計果醬',
-        titleEng: '（Social Design Jam）',
-        subtitle: '為少數而設計的真實解決方案',
+        title: '四十分之一角落',
+        titleEng: '（One-Forty Corner）',
+        subtitle: '為移工而設計的友善空間計畫',
         text: '我們運用以人為本的設計流程，讓各種專業背景的台灣人與東南亞移工一起參與社會設計工作坊，從田野調查、腦力激盪到原型試做等步驟，解決移工在台灣所面臨的問題，例如公共空間不友善、職場災害、偏見與歧視等，希望為移工打造出更適合工作與生活的環境。',
         img: '/assets/images/solutions/social-design.png',
         note: '(即將上線，敬請期待)'

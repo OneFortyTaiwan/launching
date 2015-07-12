@@ -15,13 +15,13 @@ angular
         isActive: true
       },
       {
-        name: '了解移工',
+        name: '移工故事',
         link: 'background',
         isActive: false
       },
       {
         name: '計畫緣起',
-        link: 'problems',
+        link: 'problem-dialog',
         isActive: false
       },
       {
